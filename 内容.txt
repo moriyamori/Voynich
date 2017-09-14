@@ -1,0 +1,63 @@
+GROPBY　使用時のフィールド指定関数
+
+集計関数	内容
+SUM	合計を求める
+AVG	平均を求める
+MAX	最大値を求める
+MIN	最小値を求める
+COUNT	個数（行数）を求める
+
+
+ご指摘ありがとうございます。
+会社の書籍お借りいたします。
+
+検索結果をTMPテーブル格納まではわかるのですが、
+サブフォームが使用できないとなりますと
+TMPテーブルを表示、更新を施す画面はどのようなツールを使えばいいのでしょうか？
+
+お疲れ様です。
+ご助言頂いた住所録ファイルの件につきまして分かりかねるところがあり、教えて頂きたいのですが
+画像の様に値をTMPテーブルに入力しフォームに表示する事は出来ました。
+ただ、このままですとフォーム画面で値を変更するとTMPテーブルの値が書き変わってしまうので
+更新されない様にしたいのですが、プロパティシートの更新許可を「いいえ」に設定しますと
+フォーム画面内にて文字入力自体が不可になってしまいます。
+こちらを文字入力だけは許可した状態で更新されないようにしたいのですが、
+適当なプロパティオプションなどありますでしょうか？
+よろしくお願いいたします。
+
+
+INSERT INTO テーブル1 ( a, b, c )
+SELECT TMP検索格納.a, TMP検索格納.b, TMP検索格納.c　FROM TMP検索格納;
+
+SELECT TMP検索格納.a, TMP検索格納.b, TMP検索格納.c FROM TMP検索格納
+
+何がわからなくてどこまで可能なのか？
+わからなくなったら戻るしかない、そこから出来るとこまで戻って一つづつ潰していく
+
+・英単語の翻訳＜IT用語の検索
+出来ない事を無理やりこなそうとしない（時間の無駄
+
+
+Sub MySQLDelete()
+
+    Dim cn As New ADODB.Connection
+    Dim cmd As New ADODB.Command
+    Dim ｓｔｒSQL As String
+    
+    Set cn = CurrentProject.Connection
+        
+    mySQL = "DELETE * FROM 出張管理;"
+ 
+    cmd.ActiveConnection = cn
+    cmd.CommandText = mySQL
+
+    If MsgBox("全レコードを削除します。", vbYesNo) = vbYes Then
+        cmd.Execute
+    End If
+                            
+    cn.Close: Set cn = Nothing
+    
+End Sub
+
+
+
